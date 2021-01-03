@@ -1,218 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html>
+<title>Shoutel</title>
+<style>
+body,html{height:100%;margin:0}.bgimg{background-image:url("./photo-1470115636492-6d2b56f9146d.jpg");height:100%;background-position:center;background-size:cover;position:relative;color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:25px}.topleft{position:absolute;top:0;left:16px}.middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}hr{margin:0 auto;width:200px}
+</style>
+<body>
 
-    <title>Shoutel - Under construction</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <style type="text/css">
-body{font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
-h1{font-size: 2rem;}
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
+<div class="bgimg">
+  <div class="topleft">
+    <p>Shoutel</p>
+  </div>
+  <div class="middle">
+    <h1>얼마 안 남았어요!</h1>
+    <hr>
+    <p id="timer" style="font-size:30px"></p>
+  </div>
+</div>
+<script>
+var timer,end=new Date("2021-01-05T03:00:00Z"),_second=1e3,_minute=60*_second,_hour=60*_minute,_day=24*_hour,fillZero=function(e,n){return(n=String(n)).length>=e?n:new Array(e-n.length+1).join("0")+n};function showRemaining(){var e=new Date,n=end-e;n<0&&clearInterval(timer);var r=Math.floor(n/_day),o=Math.floor(n%_day/_hour),t=Math.floor(n%_hour/_minute),i=Math.floor(n%_minute/_second),a=n%_second;document.getElementById("timer").innerHTML=r+"d "+fillZero(2,o)+":"+fillZero(2,t)+":"+fillZero(2,i)+"."+a}timer=setInterval(showRemaining,10);
+</script>
 
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
-}
-
-
-/*
- * Base structure
- */
-
-html,
-body {
-  height: 100%;
-  background-color: #333;
-}
-body {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
-}
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
-          box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 2rem;
-}
-
-
-/*
- * Header
- */
-
-.masthead {
-  margin-bottom: 2rem;
-}
-
-.masthead-brand {
-  margin-bottom: 0;
-}
-
-.nav-masthead .nav-link {
-  padding: .25rem 0;
-  font-weight: bold;
-  color: rgba(255,255,255,.5);
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
-}
-
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255,255,255,.25);
-}
-
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
-
-.nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-
-@media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-  .nav-masthead {
-    float: right;
-  }
-}
-
-
-/*
- * Cover
- */
-
-.cover {
-  padding: 0 1.5rem;
-}
-.cover .btn-lg {
-  padding: .75rem 1.25rem;
-  font-weight: bold;
-}
-
-
-/*
- * Footer
- */
-
-.mastfoot {
-  color: rgba(255,255,255,.5);
-}
-
-
-/*
- * Affix and center
- */
-
- @media (max-width: 40em) {
-
-.cover-container {
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 100px;
-}
-}
-@media (min-width: 40em) {
-	h1{font-size: 4rem;}
-  /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 62em) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 42rem;
-  }
-}
-
-.cover img{
-	width: 200px;
-	height: auto;
-	margin:0 auto 20px auto;
-}
-    </style>
-  </head>
-  <body>
-
-<div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-          
-          </div>
-
-          <div class="inner cover">
-          	<img src="./underconstruction.png">
-            <h1 class="cover-heading">Under Construction</h1>
-            <p class="lead">Our website is under construction. We`ll be here soon with our new awesome site.</p>
-            <p>Shoutel (former Disquare)</p>
-           
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-             <a href="https://github.com/shoutel/disquare" target="_blank">GitHub</a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </body>
+</body>
 </html>
